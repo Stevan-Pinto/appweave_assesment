@@ -114,7 +114,7 @@ function addToCart(productId) {
         if (cart[cartItemIndex].quantity + quantity <= product.quantity) {
             cart[cartItemIndex].quantity += quantity;
         } else {
-            alert('Cannot add more than available quantity');
+            alert('Stock limit reached');
             return;
         }
     } else {
@@ -175,7 +175,7 @@ function increaseQuantity(index) {
         cart[index].quantity++;
         updateCart();
     } else {
-        alert('Cannot add more than available quantity');
+        alert('Stock limit reached');
     }
 }
 
@@ -199,5 +199,5 @@ function clearCart() {
 }
 
 function checkout() {
-    alert('Checkout functionality not implemented.');
+    alert('Checkout');
 }
