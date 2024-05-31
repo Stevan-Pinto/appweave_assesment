@@ -1,14 +1,15 @@
-/* Reset some default styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Container styles */
@@ -225,7 +226,7 @@ main {
     background-color: #ff6347;
 }
 
-/* Footer styles */
+/* Footer style */
 footer {
     background-color: #333;
     color: #fff;
@@ -233,7 +234,7 @@ footer {
     padding: 1rem;
 }
 
-/* Cart styles */
+/* Cart style */
 .cart {
     margin-bottom: 2rem;
 }
@@ -439,13 +440,13 @@ a {
     background-color: #e74c3c;
 }
 
-/* Styling for Products link */
+
 .header a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    margin-left: 1rem; /* Add space between the logo and the link */
+    margin-left: 1rem; 
     background-color: #f0f0f0;
     border-radius: 4px;
     transition: background-color 0.3s ease;
@@ -455,7 +456,6 @@ a {
     background-color: #ddd;
 }
 
-/* Styling for Delete button */
 .cart-item button {
     padding: 0.3rem 0.6rem;
     background-color: #ff6347;
