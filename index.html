@@ -65,7 +65,19 @@
             </div>
         </section>
         <section id="products-list" class="products-list">
-            <!-- Products will be dynamically inserted here -->
+            <!-- Example Product Item -->
+            <div class="product">
+                <img src="images/product1.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>$50.00</p>
+                <div class="product-quantity">
+                    <button onclick="decreaseQuantity(this)">-</button>
+                    <span>1</span>
+                    <button onclick="increaseQuantity(this)">+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <!-- More products will be dynamically inserted here -->
         </section>
     </main>
     <footer>

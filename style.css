@@ -67,11 +67,14 @@ header {
     position: relative;
     color: #fff;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .cart-icon img {
     width: 24px;
     height: 24px;
+    margin-right: 0.5rem;
 }
 
 #cart-count {
@@ -181,6 +184,33 @@ main {
     color: #333;
 }
 
+.product-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.product-quantity button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product-quantity button:hover {
+    background-color: #ff6347;
+}
+
+.product-quantity span {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
 .product button {
     padding: 0.5rem 1rem;
     background-color: #333;
@@ -231,17 +261,19 @@ footer {
 }
 
 .cart-item-actions button {
-    background-color: transparent;
+    background-color: #333;
+    color: #fff;
     border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 1.2rem;
     margin-left: 0.5rem;
-    color: #333;
-    transition: color 0.3s ease;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .cart-item-actions button:hover {
-    color: #ff6347;
+    background-color: #ff6347;
 }
 
 /* Cart total styles */
@@ -342,16 +374,106 @@ footer {
 }
 
 
-.cart-icon {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
+.product-quantity, .quantity-control {
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
-.cart-icon img {
-    width: 56px;
-    height: 45px;
-    margin-right: 0.5rem;
+.product-quantity button, .quantity-control button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #524a4a;
+    cursor: pointer;
+}
+
+.product-quantity span, .quantity-control span {
+    width: 30px;
+    text-align: center;
+}
+
+.product-quantity button:hover, .quantity-control button:hover {
+    background-color: #e0e0e0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    padding-bottom: 1rem;
+}
+
+
+
+
+.cart-item button {
+    padding: 0.3rem 0.6rem;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+    background-color: #e74c3c;
+}
+
+/* Styling for Products link */
+.header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem; /* Add space between the logo and the link */
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+    background-color: #ddd;
+}
+
+/* Styling for Delete button */
+.cart-item button {
+    padding: 0.3rem 0.6rem;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+    background-color: #e74c3c;
+}
+
+/* Flexbox for header */
+.header {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Spread the items horizontally */
+    padding: 1rem; /* Add padding */
 }

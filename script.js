@@ -3,7 +3,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     const productList = document.getElementById('products-list');
     const cartList = document.getElementById('cart-list');
-    
+
     if (productList) {
         fetchProducts().then(displayProducts);
     }
@@ -32,10 +32,31 @@ function displayProducts(products) {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>Rs ${product.price}</p>
+            <div class="product-quantity">
+                <button onclick="decreaseQuantityInList(this)">-</button>
+                <span>1</span>
+                <button onclick="increaseQuantityInList(this)">+</button>
+            </div>
             <button onclick="addToCart(${product.id})">Add to cart</button>
         `;
         productList.appendChild(productDiv);
     });
+}
+
+function increaseQuantityInList(button) {
+    const quantitySpan = button.previousElementSibling;
+    let quantity = parseInt(quantitySpan.textContent);
+    quantity += 1;
+    quantitySpan.textContent = quantity;
+}
+
+function decreaseQuantityInList(button) {
+    const quantitySpan = button.nextElementSibling;
+    let quantity = parseInt(quantitySpan.textContent);
+    if (quantity > 1) {
+        quantity -= 1;
+        quantitySpan.textContent = quantity;
+    }
 }
 
 function searchProducts() {
@@ -78,23 +99,26 @@ function filterProducts() {
 
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-
     if (!product) {
         console.error("Product not found with ID:", productId);
         return;
     }
 
+    const productDiv = document.querySelector(`button[onclick="addToCart(${productId})"]`).closest('.product');
+    const quantitySpan = productDiv.querySelector('.product-quantity span');
+    const quantity = parseInt(quantitySpan.textContent);
+
     const cartItemIndex = cart.findIndex(item => item.product.id === productId);
 
     if (cartItemIndex !== -1) {
-        if (cart[cartItemIndex].quantity < product.quantity) {
-            cart[cartItemIndex].quantity++;
+        if (cart[cartItemIndex].quantity + quantity <= product.quantity) {
+            cart[cartItemIndex].quantity += quantity;
         } else {
             alert('Cannot add more than available quantity');
             return;
         }
     } else {
-        cart.push({ product, quantity: 1 });
+        cart.push({ product, quantity });
     }
 
     updateCart();
