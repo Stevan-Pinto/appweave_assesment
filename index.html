@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appweave Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Appweave Store</h1>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+            <a href="cart.html" class="cart-icon">
+                <img src="images/cart_icons.png" alt="Cart">
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to Appweave Store</h2>
+            <p>Discover the best T-shirts and hoodies.</p>
+        </section>
+        <section class="filters">
+            <h2>Filters</h2>
+            <div>
+                <label>Colour</label>
+                <select id="filter-colour" onchange="filterProducts()">
+                    <option value="">All</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Green">Green</option>
+                </select>
+            </div>
+            <div>
+                <label>Gender</label>
+                <select id="filter-gender" onchange="filterProducts()">
+                    <option value="">All</option>
+                    <option value="Men">Men</option>
+                    <option value="Women">Women</option>
+                </select>
+            </div>
+            <div>
+                <label>Price</label>
+                <select id="filter-price" onchange="filterProducts()">
+                    <option value="">All</option>
+                    <option value="0-250">0-250</option>
+                    <option value="251-450">251-450</option>
+                    <option value="450">450+</option>
+                </select>
+            </div>
+            <div>
+                <label>Type</label>
+                <select id="filter-type" onchange="filterProducts()">
+                    <option value="">All</option>
+                    <option value="Polo">Polo</option>
+                    <option value="Hoodie">Hoodie</option>
+                    <option value="Basic">Basic</option>
+                </select>
+            </div>
+        </section>
+        <section id="products-list" class="products-list">
+            <!-- Products will be dynamically inserted here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Appweave Store. All rights reserved.</p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

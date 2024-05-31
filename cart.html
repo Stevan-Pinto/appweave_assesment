@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appweave Store - Cart</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Appweave Store</h1>
+            <a href="index.html">Products</a>
+        </div>
+        <div class="cart" id="cart-list">
+            <!-- Cart items will be injected here by JavaScript -->
+        </div>
+        <div class="cart-total" id="cart-total">
+            Total amount: Rs. <span id="total-amount">0</span>
+        </div>
+        <div class="cart-actions">
+            <button onclick="checkout()">Checkout</button>
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
